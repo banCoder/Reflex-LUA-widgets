@@ -138,26 +138,28 @@ function Nice_HealthBar:draw()
             end
 
             -- outter text
+            nvgFontBlur(3)
             nvgTextAlign(NVG_ALIGN_RIGHT, NVG_ALIGN_BOTTOM)
             if Nice_HealthBar.takenDamage > 201 then
-                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(255, intensity)))
+                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(20000, intensity)))
             elseif Nice_HealthBar.takenDamage > 101 then
-                nvgFillColor(Color(0x00, 0xa0, 0x00, math.min(255, intensity)))
+                nvgFillColor(Color(0x00, 0xa0, 0x00, math.min(20000, intensity)))
             elseif Nice_HealthBar.takenDamage > 51 then
-                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(255, intensity)))
+                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(20000, intensity)))
             elseif Nice_HealthBar.takenDamage > 0 then
-                nvgFillColor(Color(0, 0, 0, math.min(255, intensity)))
+                nvgFillColor(Color(0, 0, 0, math.min(20000, intensity)))
             end
             move = math.max(move - Nice_HealthBar.time * 3, 0)
-            nvgFontSize((((Nice_HealthBar.takenDamage + 250)) * 0.22) * 1.1)
+            nvgFontSize(80)
             if player.health >= 100 then
-                nvgText(-(player.health - 100 + 2) * 5.2 - 2, move - 2, Nice_HealthBar.takenDamage)
+                nvgText(-(player.health - 100 + 2) * 5.2, move, Nice_HealthBar.takenDamage)
             else
-                nvgText(-(player.health + 2) * 5.2 - 2, move - 2, Nice_HealthBar.takenDamage)
+                nvgText(-(player.health + 2) * 5.2, move, Nice_HealthBar.takenDamage)
             end
         
             -- damage you're taking
             -- color depending on amount of damage taken
+            nvgFontBlur(0)
             if Nice_HealthBar.takenDamage > 201 then
                 nvgFillColor(Color(0xb8, 0x00, 0x00, math.min(255, intensity)))
             elseif Nice_HealthBar.takenDamage > 101 then

@@ -178,22 +178,24 @@ function Nice_ArmorBar:draw()
             end
 
             -- outter text
-            nvgFontSize((((Nice_ArmorBar.doneDamage + 250)) * 0.22) * 1.1)
+            nvgFontBlur(3)
+            nvgFontSize(80)
             nvgTextAlign(NVG_ALIGN_LEFT, NVG_ALIGN_BOTTOM)
             move = math.max(move - Nice_ArmorBar.time * 3, 0)
             if Nice_ArmorBar.doneDamage > 201 then
-                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(255, intensity)))
+                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(20000, intensity)))
             elseif Nice_ArmorBar.doneDamage > 101 then
-                nvgFillColor(Color(0x00, 0xa0, 0x00, math.min(255, intensity)))
+                nvgFillColor(Color(0x00, 0xa0, 0x00, math.min(20000, intensity)))
             elseif Nice_ArmorBar.doneDamage > 51 then
-                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(255, intensity)))
+                nvgFillColor(Color(0x00, 0x58, 0xc0, math.min(20000, intensity)))
             elseif Nice_ArmorBar.doneDamage > 0 then
-                nvgFillColor(Color(0, 0, 0, math.min(255, intensity)))
+                nvgFillColor(Color(0, 0, 0, math.min(20000, intensity)))
             end
-            nvgText((player.armor + 6) * 2.6, move - 1, Nice_ArmorBar.doneDamage)
+            nvgText((player.armor + 5) * 2.6, move, Nice_ArmorBar.doneDamage)
 
             -- damage you're doing
             -- color depending on amount of damage done
+            nvgFontBlur(0)
             if Nice_ArmorBar.doneDamage > 201 then
                 nvgFillColor(Color(0xb8, 0x00, 0x00, math.min(255, intensity)))
             elseif Nice_ArmorBar.doneDamage > 101 then

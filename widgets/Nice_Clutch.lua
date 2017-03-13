@@ -5,7 +5,7 @@ registerWidget("Nice_Clutch")
 
 
 function Nice_Clutch:draw()
-    if not shouldShowHUD() or not (string.find(world.mutators, "Arena")) then return end
+    if not shouldShowHUD() or not ((world.gameModeIndex == 3 or world.gameModeIndex == 1) and string.find(world.mutators, "Arena")) then return end
     local localPlayer = getLocalPlayer()
     if localPlayer.state ~= PLAYER_STATE_INGAME then return end
 

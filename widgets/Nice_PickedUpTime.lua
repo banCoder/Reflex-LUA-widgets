@@ -99,10 +99,12 @@ function Nice_PickedUpTime:draw()
              if self.userData.color then
                  Nice_PickedUpTime.fontColor = Color(0, 88, 192)
                  Nice_PickedUpTime.bgColor = Color(0, 0, 0)
+                 Nice_PickedUpTime.bgColorBright = Color(0, 0, 0, 1000)
                  Nice_PickedUpTime.armorColor = fontColor
              else
                  Nice_PickedUpTime.fontColor = Color(255, 255, 255, 255)
                  Nice_PickedUpTime.bgColor = Color(255, 255, 0)
+                 Nice_PickedUpTime.bgColorBright = Color(255, 255, 0, 1000)
                  Nice_PickedUpTime.armorColor = Color(0, 88, 192)
              end
              Nice_PickedUpTime.svgLocation = "internal/ui/icons/health"
@@ -125,10 +127,12 @@ function Nice_PickedUpTime:draw()
         if self.userData.color then
             Nice_PickedUpTime.fontColor = Color(184, 0, 0)
             Nice_PickedUpTime.bgColor = Color(0, 88, 192)
+            Nice_PickedUpTime.bgColorBright = Color(0, 88, 192, 1000)
             Nice_PickedUpTime.armorColor = fontColor
         else
             Nice_PickedUpTime.fontColor = Color(255, 255, 255, 255)
             Nice_PickedUpTime.bgColor = Color(255, 255, 0)
+            Nice_PickedUpTime.bgColorBright = Color(255, 255, 0, 1000)
             Nice_PickedUpTime.armorColor = Color(184, 0, 0)
         end
         Nice_PickedUpTime.svgLocation = "internal/ui/icons/armor"
@@ -149,10 +153,12 @@ function Nice_PickedUpTime:draw()
         if self.userData.color then
             Nice_PickedUpTime.fontColor = Color(224, 192, 0)
             Nice_PickedUpTime.bgColor = Color(0, 160, 0)
+            Nice_PickedUpTime.bgColorBright = Color(0, 160, 0, 1000)
             Nice_PickedUpTime.armorColor = fontColor
         else
             Nice_PickedUpTime.fontColor = Color(255, 255, 255, 255)
             Nice_PickedUpTime.bgColor = Color(255, 255, 0)
+            Nice_PickedUpTime.bgColorBright = Color(255, 255, 0, 1000)
             Nice_PickedUpTime.armorColor = Color(224, 192, 0)
         end
         Nice_PickedUpTime.svgLocation = "internal/ui/icons/armor"
@@ -173,10 +179,12 @@ function Nice_PickedUpTime:draw()
         if self.userData.color then
             Nice_PickedUpTime.fontColor = Color(0, 160, 0)
             Nice_PickedUpTime.bgColor = Color(0, 88, 192)
+            Nice_PickedUpTime.bgColorBright = Color(0, 88, 192, 1000)
             Nice_PickedUpTime.armorColor = fontColor
         else
             Nice_PickedUpTime.fontColor = Color(255, 255, 255, 255)
             Nice_PickedUpTime.bgColor = Color(255, 255, 0)
+            Nice_PickedUpTime.bgColorBright = Color(255, 255, 0, 1000)
             Nice_PickedUpTime.armorColor = Color(0, 160, 0)
         end
         Nice_PickedUpTime.svgLocation = "internal/ui/icons/armor"
@@ -198,10 +206,12 @@ function Nice_PickedUpTime:draw()
             if self.userData.color then
                 Nice_PickedUpTime.fontColor = Color(0, 88, 192)
                 Nice_PickedUpTime.bgColor = Color(0, 0, 0)
+                Nice_PickedUpTime.bgColorBright = Color(0, 0, 0, 1000)
                 Nice_PickedUpTime.armorColor = fontColor
             else
                 Nice_PickedUpTime.fontColor = Color(255, 255, 255, 255)
                 Nice_PickedUpTime.bgColor = Color(255, 255, 0)
+                Nice_PickedUpTime.bgColorBright = Color(255, 255, 0, 1000)
                 Nice_PickedUpTime.armorColor = Color(0, 88, 192)
             end
             Nice_PickedUpTime.svgLocation = "internal/ui/icons/health"
@@ -216,19 +226,23 @@ function Nice_PickedUpTime:draw()
             if self.userData.color then
                 if self.userData.showBackground then
                     -- background
+                    nvgFontBlur(1)
                     nvgFontSize(50)
-                    nvgFillColor(Nice_PickedUpTime.bgColor)
+                    nvgFillColor(Nice_PickedUpTime.bgColorBright)
                     nvgTextAlign(NVG_ALIGN_RIGHT, NVG_ALIGN_MIDDLE)
-                    nvgText(1, -1, string.format("%02d", Nice_PickedUpTime.minutes) .. ":")
+                    nvgText(0, 0, string.format("%02d", Nice_PickedUpTime.minutes) .. ":")
                     nvgTextAlign(NVG_ALIGN_LEFT, NVG_ALIGN_MIDDLE)
-                    nvgText(1, -1, string.format("%02d", Nice_PickedUpTime.seconds))
+                    nvgText(0, 0, string.format("%02d", Nice_PickedUpTime.seconds))
+                    nvgFillColor(Nice_PickedUpTime.bgColor)
                     nvgSvg(Nice_PickedUpTime.svgLocation, 71, -1, 19)
                     nvgFontSize(47)
                     if self.userData.showText then
-                        nvgText(102, -1, Nice_PickedUpTime.text)
+                        nvgFillColor(Nice_PickedUpTime.bgColorBright)
+                        nvgText(101, 0, Nice_PickedUpTime.text)
                     end
                 end
                 -- font
+                nvgFontBlur(0)
                 nvgFontSize(50)
                 nvgFillColor(Nice_PickedUpTime.fontColor)
 	            nvgTextAlign(NVG_ALIGN_RIGHT, NVG_ALIGN_MIDDLE)
@@ -243,19 +257,23 @@ function Nice_PickedUpTime:draw()
             else
                 if self.userData.showBackground then
                     -- background
+                    nvgFontBlur(1)
                     nvgFontSize(50)
-                    nvgFillColor(Color(0, 0, 0))
+                    nvgFillColor(Color(0, 0, 0, 1000))
                     nvgTextAlign(NVG_ALIGN_RIGHT, NVG_ALIGN_MIDDLE)
-                    nvgText(1, -1, string.format("%02d", Nice_PickedUpTime.minutes) .. ":")
+                    nvgText(0, 0, string.format("%02d", Nice_PickedUpTime.minutes) .. ":")
                     nvgTextAlign(NVG_ALIGN_LEFT, NVG_ALIGN_MIDDLE)
-                    nvgText(1, -1, string.format("%02d", Nice_PickedUpTime.seconds))
+                    nvgText(0, 0, string.format("%02d", Nice_PickedUpTime.seconds))
+                    nvgFillColor(Color(0, 0, 0))
                     nvgSvg(Nice_PickedUpTime.svgLocation, 71, -1, 19)
                     nvgFontSize(47)
                     if self.userData.showText then
-                        nvgText(102, -1, Nice_PickedUpTime.text)
+                        nvgFillColor(Color(0, 0, 0, 1000))
+                        nvgText(101, 0, Nice_PickedUpTime.text)
                     end
                 end
                 -- font
+                nvgFontBlur(0)
                 nvgFontSize(50)
                 nvgFillColor(Nice_PickedUpTime.fontColor)
 	            nvgTextAlign(NVG_ALIGN_RIGHT, NVG_ALIGN_MIDDLE)
