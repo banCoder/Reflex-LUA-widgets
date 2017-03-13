@@ -23,15 +23,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="widgets\" />
-    <Folder Include="widgets\SVGfolder\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="widgets\br_Awards.lua" />
-    <Compile Include="widgets\Crosshairs 2.lua" />
-    <Compile Include="widgets\KillFeed.lua" />
-    <Compile Include="widgets\LowAmmo.lua" />
-    <Compile Include="widgets\mglicross.lua" />
-    <Compile Include="widgets\mglicross2.lua" />
     <Compile Include="widgets\nice_CarnageTracker.lua" />
     <Compile Include="widgets\Nice_Cock.lua" />
     <Compile Include="widgets\Nice_VisualDamageBatching.lua" />
@@ -40,11 +33,6 @@
     <Compile Include="widgets\Nice_FovSettings.lua" />
     <Compile Include="widgets\Nice_Spectator.lua" />
     <Compile Include="widgets\Nice_WeaponSettings_Mgli.lua" />
-    <Compile Include="widgets\AccelMeter.lua" />
-    <Compile Include="widgets\apheleon_TimerTimeline.lua" />
-    <Compile Include="widgets\Crosshairs.lua" />
-    <Compile Include="widgets\KovFPMtT.lua" />
-    <Compile Include="widgets\KovSpeedometer.lua" />
     <Compile Include="widgets\Nice_ArmorBar.lua" />
     <Compile Include="widgets\Nice_ICaccuracy.lua" />
     <Compile Include="widgets\Nice_HealthBar.lua" />
@@ -52,25 +40,10 @@
     <Compile Include="widgets\Nice_TrueHealthBoltable.lua" />
     <Compile Include="widgets\Nice_Clutch.lua" />
     <Compile Include="widgets\Nice_Weapons.lua" />
-    <Compile Include="widgets\TerStatus.lua" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="widgets\.hgignore" />
     <Content Include="widgets\.hg_archival.txt" />
-    <Content Include="widgets\SVGfolder\weapon_battleaxe.svg" />
-    <Content Include="widgets\SVGfolder\weapon_battlemace.svg" />
-    <Content Include="widgets\SVGfolder\weapon_crowbar.svg" />
-    <Content Include="widgets\SVGfolder\weapon_cwrench.svg" />
-    <Content Include="widgets\SVGfolder\weapon_hatchet.svg" />
-    <Content Include="widgets\SVGfolder\weapon_hwsprinkler.svg" />
-    <Content Include="widgets\SVGfolder\weapon_machete.svg" />
-    <Content Include="widgets\SVGfolder\weapon_mjlnir.svg" />
-    <Content Include="widgets\SVGfolder\weapon_morningstar.svg" />
-    <Content Include="widgets\SVGfolder\weapon_pipe.svg" />
-    <Content Include="widgets\SVGfolder\weapon_pwrench.svg" />
-    <Content Include="widgets\SVGfolder\weapon_shortsword.svg" />
-    <Content Include="widgets\SVGfolder\weapon_warhammer.svg" />
-    <Content Include="widgets\SVGfolder\weapon_wrench.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
